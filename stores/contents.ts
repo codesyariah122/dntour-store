@@ -3,7 +3,9 @@ import { defineStore } from "pinia";
 
 export const useContentStore = defineStore({
   id: "content-store",
-  state: () => ({ heros: [] }),
+  state: () => ({
+    heros: [],
+  }),
 
   actions: {
     async getHeroContent() {
