@@ -3,7 +3,7 @@ import { useContentStore } from "~/stores";
 
 const herosContent = useContentStore();
 
-const heros = computed(() => herosContent.heros[0]);
+let heros: Object = computed(() => herosContent.heros[0]);
 
 const getHeroContent = async () => {
   await herosContent.getHeroContent();

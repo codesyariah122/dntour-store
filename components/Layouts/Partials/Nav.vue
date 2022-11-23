@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isOpen: boolean = true;
+let isOpen: boolean = true;
 </script>
 <template>
   <nav
