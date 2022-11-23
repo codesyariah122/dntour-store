@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useContentStore } from "~/stores";
 
-const isOpen: boolean = true;
 const herosContent = useContentStore();
+
 const heros = computed(() => herosContent.heros[0]);
 
 const getHeroContent = async () => {

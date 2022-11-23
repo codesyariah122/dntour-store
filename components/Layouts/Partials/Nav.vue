@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const isOpen: boolean = true;
+</script>
 <template>
   <nav
     :x-data="{ isOpen: false }"
