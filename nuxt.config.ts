@@ -1,6 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ["~/assets/css/tailwind.css"],
   modules: [
+    [
+      "@nuxtjs/tailwindcss",
+      {
+        tailwindcss: {
+          cssPath: "~/assets/css/tailwind.css",
+          configPath: "tailwind.config",
+          exposeConfig: false,
+          config: {},
+          injectPosition: 0,
+          viewer: true,
+        },
+      },
+    ],
     [
       "@pinia/nuxt",
       {
@@ -14,8 +28,9 @@ export default defineNuxtConfig({
     ],
   ],
   runtimeConfig: {
-    apiSecret: "123",
     public: {
+      CONTENTFUL_SPACE: process.env.NUXT_PUBLIC_CONTENTFUL_SPACE,
+      CONTENTFUL_ACCESS_TOKEN: process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
       apiBase: "/api",
     },
   },
@@ -25,8 +40,20 @@ export default defineNuxtConfig({
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
-      script: [{ src: "https://awesome-lib.js" }],
-      link: [{ rel: "stylesheet", href: "https://awesome-lib.css" }],
+      script: [
+        { src: "https://awesome-lib.js" },
+        {
+          src: "https://unpkg.com/flowbite@1.5.4/dist/flowbite.js",
+          body: true,
+        },
+      ],
+      link: [
+        { rel: "stylesheet", href: "https://awesome-lib.css" },
+        {
+          rel: "stylesheet",
+          href: "https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css",
+        },
+      ],
       style: [],
       noscript: [],
     },

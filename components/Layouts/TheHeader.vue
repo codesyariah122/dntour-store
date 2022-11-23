@@ -1,10 +1,11 @@
-<script lang="ts" setup></script>
-
 <template>
   <div>
-    <h1>Component: Layouts/TheHeader</h1>
-    <br />
-    <slot name="header"> Default header content </slot>
+    <slot name="header">
+      <header class="bg-white dark:bg-gray-200">
+        <LayoutsPartialsNav />
+        <LayoutsPartialsHero />
+      </header>
+    </slot>
   </div>
 </template>
 

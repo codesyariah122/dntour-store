@@ -3,6 +3,8 @@
     <header>
       <LayoutsTheHeader />
     </header>
-    <main><slot /></main>
+    <main>
+      <slot />
+    </main>
   </div>
 </template>

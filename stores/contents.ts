@@ -10,9 +10,8 @@ export const useContentStore = defineStore({
       try {
         const { $client } = useNuxtApp();
         const response = await $client.getEntries({
-          content_type: "webcontent",
+          content_type: "landingContent",
         });
-        console.log(response);
         if (response.items.length > 0) {
           this.heros = response.items;
         }
